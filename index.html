@@ -16,7 +16,6 @@
       background-attachment: fixed;
       font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
       font-size: 24px;
-      color: black;
     }
 
     .secondary_header ul {
@@ -29,7 +28,7 @@
     .secondary_header ul li {
       display: inline-block;
       list-style: none;
-      color: black;
+      color: #FFFFFF;
       font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
       letter-spacing: 1px;
       margin: 0 1%;
@@ -70,7 +69,7 @@
 
     .copyright {
       text-align: center;
-      color: black;
+      color: #FFFFFF;
       font-weight: lighter;
       letter-spacing: 2px;
       padding: 25px 0 0 0;
@@ -110,8 +109,66 @@
       top: 60%;
       left: 80%;
       transform: translate(-50%, -50%);
-      width: 28.75vw;
-      max-width: 489px;
-      min-width: 138px;
+      width: 25vw;
+      max-width: 425px;
+      min-width: 120px;
       height: auto;
     }
+
+    @media (max-width: 768px) {
+      .hero-wrapper img.logo {
+        top: 70%;
+        left: 50%;
+        width: 50vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <div class="hero-wrapper">
+    <img src="images/las-vegas-bg.png" alt="Las Vegas" class="bg">
+    <img src="images/puffy-taco-logo.png" alt="Puffy Taco Logo" class="logo">
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="secondary_header" id="menu">
+    <center>
+      <ul class="nav-menu">
+        <li>ABOUT</li>
+        <li>MENU</li>
+        <li>VIDEOS</li>
+        <li>CATERING</li>
+        <li>LOCATION</li>
+        <li>CONTACT</li>
+      </ul>
+    </center>
+  </nav>
+
+  <!-- MAIN SECTION -->
+  <section>
+    <article class="left_article" align="center">
+      <h3>Pardon our dust.</h3>
+      <p>Good things are cooking. Opening soon.&nbsp;</p>
+    </article>
+
+    <div class="row">
+      <div class="columns">
+        <h2>&nbsp;</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <div class="social"></div>
+
+  <!-- FOOTER -->
+  <footer class="secondary_header footer">
+    <div class="copyright">
+      2026 - <strong>Puffy Taco - Las Vegas, NV</strong>
+    </div>
+  </footer>
+
+</body>
+</html>
