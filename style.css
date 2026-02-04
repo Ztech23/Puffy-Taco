@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -318,3 +316,4 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+
