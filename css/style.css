@@ -100,14 +100,14 @@ body::before {
   text-decoration: none;
 }
 
-/* Desktop scaling */
 .brand_logo {
-  width: clamp(260px, 30vw, 460px);
+  width: clamp(130px, 15vw, 230px); /* HALF SIZE */
   height: auto;
   max-width: 100%;
   display: block;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
 }
+
 
 /* Phone sizing */
 @media (max-width: 600px) {
