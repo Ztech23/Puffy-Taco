@@ -44,17 +44,18 @@ body::before {
    HEADER / NAV
 ========================= */
 .site_header {
-  position: relative; /* scrolls naturally */
+  position: relative; /* scrolls with the page */
   z-index: 10;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 16px 22px;
+  padding: 18px 22px;
   background: rgba(0,0,0,0.7);
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
+
 
 
 .brand {
@@ -298,4 +299,35 @@ body::before {
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border: 0;
+}
+/* =========================
+   HEADER BRAND LOGO (FINAL)
+========================= */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Desktop + fluid scaling */
+.brand_logo {
+  width: clamp(240px, 28vw, 420px); /* BIG on desktop, fluid scaling */
+  height: auto;
+  max-width: 100%;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
+}
+
+/* Phone sizing — intentionally larger */
+@media (max-width: 600px) {
+  .brand_logo {
+    width: 280px;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .brand_logo {
+    width: 250px;
+  }
 }
