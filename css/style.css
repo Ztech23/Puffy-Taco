@@ -1,214 +1,438 @@
-<!doctype html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Puffy Taco | Las Vegas, NV | Puffy Tacos, Catering & Pop-Ups</title>
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Primary SEO -->
-  <meta name="description" content="Puffy Taco is a Las Vegas-born puffy taco concept serving bold flavors with no shortcuts. Opening soon in Las Vegas, NV. Catering, pop-ups, merch, and drinks coming soon.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://puffytaco.vegas/">
-  <meta name="theme-color" content="#000000">
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Puffy Taco">
-  <meta property="og:title" content="Puffy Taco | Las Vegas, NV">
-  <meta property="og:description" content="Las Vegas-born puffy tacos. Opening soon. Catering, pop-ups, and merch coming soon.">
-  <meta property="og:url" content="https://puffytaco.vegas/">
-  <meta property="og:image" content="https://puffytaco.vegas/images/puffy-taco-logo.png">
+/* =========================
+   GLOBAL / BACKGROUND
+========================= */
+:root {
+  --red: #c62828;
+  --yellow: #f4c430;
+  --green: #3fa34d;
+  --smoke: #f5f5f5;
+}
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Puffy Taco | Las Vegas, NV">
-  <meta name="twitter:description" content="Las Vegas-born puffy tacos. Opening soon. Catering, pop-ups, and merch coming soon.">
-  <meta name="twitter:image" content="https://puffytaco.vegas/images/puffy-taco-logo.png">
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=12">
+  background-color: #000;
+  background-image: url("/images/bg-las-vegas.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "name": "Puffy Taco",
-    "url": "https://puffytaco.vegas/",
-    "image": "https://puffytaco.vegas/images/puffy-taco-logo.png",
-    "description": "Las Vegas-born puffy taco concept. Opening soon. Catering, pop-ups, merch, and drinks coming soon.",
-    "servesCuisine": ["Mexican", "Tex-Mex"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Las Vegas",
-      "addressRegion": "NV",
-      "addressCountry": "US"
-    },
-    "areaServed": { "@type": "City", "name": "Las Vegas" }
+/* Soft fade overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(15, 15, 15, 0.55),
+    rgba(15, 15, 15, 0.65)
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Accessible hidden text */
+.sr_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+.site_header {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 22px;
+  background: rgba(0,0,0,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 7px;
+
+  text-transform: uppercase;
+  line-height: 1;
+
+  text-shadow: 0 4px 14px rgba(0,0,0,0.6);
+}
+
+.site_nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.site_nav a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.hero_logo {
+  width: clamp(380px, 38vw, 640px);
+  max-width: 94%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.65));
+}
+
+.tagline {
+  margin-top: 28px;
+  max-width: 980px;
+  text-align: center;
+
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  line-height: 1.15;
+
+  text-transform: uppercase;
+  color: #ffffff;
+
+  text-shadow: 0 6px 20px rgba(0,0,0,0.75);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 55px 20px;
+
+  background: rgba(0,0,0,0.68);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+}
+
+.section h2 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+/* About columns */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.columns p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Notes */
+.note {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 22px;
+
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* =========================
+   MENU – PUFFY TACO STYLE
+========================= */
+.menu_section {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 70px 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.72), rgba(15,15,15,0.82));
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.45);
+}
+
+.menu_title {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.menu_subtitle {
+  text-align: center;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+.menu_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.menu_card {
+  position: relative;
+  padding: 22px 18px;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.menu_card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244,196,48,0.35);
+}
+
+.menu_heading {
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  color: var(--yellow);
+  border-bottom: 2px solid rgba(244,196,48,0.35);
+  padding-bottom: 10px;
+}
+
+.menu_item {
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.16);
+  transition: transform 0.25s ease;
+}
+
+.menu_item:last-of-type {
+  border-bottom: none;
+}
+
+.menu_item:hover {
+  transform: translateX(6px);
+}
+
+.menu_item_top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.menu_name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--smoke);
+}
+
+.menu_name::before {
+  content: "• ";
+  color: var(--red);
+  font-weight: 900;
+}
+
+.menu_price {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  color: rgba(255,255,255,0.85);
+}
+
+.menu_desc {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.82;
+  line-height: 1.35;
+}
+
+.menu_note {
+  margin-top: 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  color: rgba(255,255,255,0.85);
+}
+
+.menu_note::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(63,163,77,0.9);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 22px 12px;
+  background: rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.footer_logo {
+  width: 140px;
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE (<=900px)
+========================= */
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
   }
-  </script>
-</head>
 
-<body>
+  .menu_grid {
+    grid-template-columns: 1fr;
+  }
 
-  <!-- HEADER / NAV -->
-  <header class="site_header">
-    <a href="#home" class="brand">PUFFY TACO</a>
+  .site_header {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-    <nav class="site_nav" aria-label="Primary">
-      <a href="#about">ABOUT</a>
-      <a href="#location">LOCATION</a>
-      <a href="#menu">MENU</a>
-      <a href="#catering">CATERING</a>
-      <a href="#merch">MERCH</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
-  </header>
+  .site_nav a {
+    margin: 0 10px;
+  }
 
-  <!-- HERO -->
-  <main id="home">
-    <section class="hero">
-      <h1 class="sr_only">Puffy Taco | Las Vegas, NV</h1>
+  .tagline {
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 0 12px;
+  }
+}
 
-      <img src="images/puffy-taco-logo.png" class="hero_logo" alt="Puffy Taco logo">
-      <p class="tagline">Excuse our dust. Good things are cooking. Opening soon.</p>
-    </section>
+/* =========================
+   MOBILE (<=600px)
+========================= */
+@media (max-width: 600px) {
+  /* Background tuned for phones */
+  body {
+    background-size: 110%;
+    background-position: center top;
+  }
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2>ABOUT</h2>
+  /* Nav becomes grid buttons */
+  .site_nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
 
-      <div class="columns">
-        <p>
-          Puffy Taco was born from long nights, loud kitchens, and a love for food that brings people together. What started as a simple idea grew from family recipes, shared tables, and learning flavor the hard way. Every tortilla, every fold, every bite reflects years of trial, tradition, and showing up hungry.
-        </p>
-        <p>
-          Raised on street corners, backyard grills, and late-night cravings, Puffy Taco pulls from old-school comfort and bold city energy. It is food made with patience, cooked with intention, and served without shortcuts. The goal has always been simple: make something unforgettable and do it right.
-        </p>
-        <p>
-          This is more than a menu. It is the story of building something from scratch, learning through failure, and earning every win along the way. Puffy Taco stands for hustle, heart, and flavor that hits hard and stays with you long after the last bite.
-        </p>
-      </div>
-    </section>
+  .site_nav a {
+    margin: 0;
+    padding: 10px 8px;
+    font-size: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+  }
 
-    <!-- LOCATION -->
-    <section class="section" id="location">
-      <h2>LOCATION</h2>
-      <p>
-        Born in Las Vegas, Puffy Taco is shaped by the energy, grit, and nonstop rhythm of the city itself. Raised among long nights, bright lights, and hard-earned lessons, the brand reflects a hometown mindset built on resilience and pride.
-      </p>
-      <p class="note">Las Vegas, NV — exact address coming soon</p>
-    </section>
+  /* Hero adjustments */
+  .hero {
+    min-height: 70vh;
+    padding: 50px 16px;
+  }
 
-    <!-- MENU (VIBED UP) -->
-    <section class="menu_section" id="menu">
-      <h2 class="menu_title">MENU</h2>
-      <p class="menu_subtitle">Opening soon. Prices + combos dropping next.</p>
+  .hero_logo {
+    width: min(520px, 92vw);
+  }
 
-      <div class="menu_grid">
+  .tagline {
+    font-size: 26px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
 
-        <div class="menu_card">
-          <h3 class="menu_heading">🌮 TACOS</h3>
+  .button {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
 
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Carne Asada</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Grilled steak, onion, cilantro, lime</small>
-          </div>
+  .footer {
+    font-size: 12px;
+  }
+}
 
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Al Pastor</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Marinated pork, pineapple, onion, cilantro</small>
-          </div>
+/* =========================
+   TINY PHONES (<=360px)
+========================= */
+@media (max-width: 360px) {
+  .site_nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Carnitas</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Slow-cooked pork, crispy finish, lime</small>
-          </div>
-
-          <div class="menu_note">Ask about salsa heat 🌶️</div>
-        </div>
-
-        <div class="menu_card">
-          <h3 class="menu_heading">🌽 SIDES</h3>
-
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Elote</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Street corn, crema, cotija, chili</small>
-          </div>
-
-          <div class="menu_note">Add extra cotija + lime.</div>
-        </div>
-
-        <div class="menu_card">
-          <h3 class="menu_heading">🥤 DRINKS</h3>
-
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Horchata</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Creamy cinnamon rice drink</small>
-          </div>
-
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Jamaica</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Hibiscus iced tea</small>
-          </div>
-
-          <div class="menu_item">
-            <div class="menu_item_top">
-              <span class="menu_name">Agua Fresca</span>
-              <span class="menu_price">—</span>
-            </div>
-            <small class="menu_desc">Fresh fruit: Mango or Pineapple</small>
-          </div>
-
-          <div class="menu_note">Cold, fresh, built for Vegas heat.</div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CATERING -->
-    <section class="section" id="catering">
-      <h2>CATERING</h2>
-      <p>Available for events, pop-ups, productions, and private catering. Booking info coming soon.</p>
-    </section>
-
-    <!-- MERCH -->
-    <section class="section" id="merch">
-      <h2>MERCH</h2>
-      <p>Limited drops coming soon. Shirts, stickers, and heat for the streets.</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2>CONTACT</h2>
-      <p>Updates dropping soon. Stay hungry.</p>
-      <a href="#" class="button" onclick="return false;">SUBSCRIBE</a>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <img src="images/LVRGK.png" class="footer_logo" alt="LVRGK Logo">
-    <div>© 2026 <strong>PuffyTaco.Vegas</strong></div>
-  </footer>
-
-</body>
-</html>
+  .hero_logo {
+    width: min(440px, 92vw);
+  }
+}
