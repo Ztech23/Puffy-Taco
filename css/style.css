@@ -100,11 +100,21 @@ body::before {
 }
 
 .tagline {
-  margin-top: 18px;
-  letter-spacing: 2px;
-  font-size: 14px;
-  opacity: 0.9;
+  margin-top: 28px;
+  max-width: 900px;
+  text-align: center;
+
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+  color: #ffffff;
+
+  text-shadow: 0 6px 20px rgba(0,0,0,0.75);
 }
+
 
 /* =========================
    SECTIONS
