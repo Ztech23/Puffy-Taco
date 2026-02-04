@@ -1,0 +1,320 @@
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* =========================
+   GLOBAL / BACKGROUND
+========================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000 url("../images/bg-las-vegas.png") center / cover no-repeat;
+  color: #ffffff;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+.site_header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 4px;
+  font-size: 16px;
+}
+
+.site_nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.site_nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.hero_logo {
+  width: 360px;
+  max-width: 85%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.65));
+}
+
+.tagline {
+  margin-top: 18px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 55px 20px;
+  background: rgba(0,0,0,0.68);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.section h2 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   ABOUT COLUMNS
+========================= */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.columns p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: rgba(255,255,255,0.92);
+}
+
+/* =========================
+   NOTES / SMALL TEXT
+========================= */
+.note {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 22px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 18px;
+  background: rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .site_header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .site_nav a {
+    margin: 0 10px;
+  }
+}
+/* =========================
+   MOBILE + RESPONSIVE POLISH
+   Paste at the VERY BOTTOM
+========================= */
+
+/* Prevent random sideways scrolling on phones */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make sections less cramped on small screens */
+@media (max-width: 900px) {
+  .section {
+    padding: 36px 16px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .columns p, .section p {
+    font-size: 15px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+}
+
+/* PHONE VIEW */
+@media (max-width: 600px) {
+  /* Header stacks nicely */
+  .site_header {
+    position: sticky;
+    top: 0;
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  /* Nav becomes a clean grid instead of one long row */
+  .site_nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+
+  .site_nav a {
+    margin: 0;
+    padding: 10px 8px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+  }
+
+  /* Hero spacing + logo size */
+  .hero {
+    min-height: 70vh;
+    padding: 50px 16px;
+  }
+
+  .hero_logo {
+    width: 260px;
+    max-width: 90%;
+  }
+
+  /* Sections width + readability */
+  .section {
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    border-radius: 14px;
+  }
+
+  /* Button fits phone width without being huge */
+  .button {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Footer spacing */
+  .footer {
+    padding: 16px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .site_nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero_logo {
+    width: 230px;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    background-size: 120%;
+    background-position: center top;
+  }
+}
+/* =========================
+   FOOTER LOGO
+========================= */
+.footer_logo {
+  width: 140px;
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+/* Mobile polish */
+@media (max-width: 600px) {
+  .footer_logo {
+    width: 110px;
+  }
+}
+/* =========================
+   SOFT BACKGROUND OVERLAY
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(15, 15, 15, 0.55),
+    rgba(15, 15, 15, 0.65)
+  );
+  pointer-events: none;
+  z-index: -1;
+}
