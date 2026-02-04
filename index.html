@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Puffy Taco | Las Vegas, NV | Puffy Tacos, Catering & Pop-Ups</title>
 
   <!-- Primary SEO -->
-  <title>Puffy Taco | Las Vegas, NV | Puffy Tacos, Catering & Pop-Ups</title>
-  <meta name="description" content="Puffy Taco is a Las Vegas-born puffy taco concept serving bold flavors with no shortcuts. Opening soon in Las Vegas, NV. Catering, pop-ups, and merch coming soon.">
+  <meta name="description" content="Puffy Taco is a Las Vegas-born puffy taco concept serving bold flavors with no shortcuts. Opening soon in Las Vegas, NV. Catering, pop-ups, merch, and drinks coming soon.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://puffytaco.vegas/">
-
-  <!-- Performance -->
   <meta name="theme-color" content="#000000">
 
-  <!-- Open Graph (Facebook/Instagram/iMessage previews) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Puffy Taco">
   <meta property="og:title" content="Puffy Taco | Las Vegas, NV">
@@ -28,9 +26,9 @@
   <meta name="twitter:image" content="https://puffytaco.vegas/images/puffy-taco-logo.png">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=12">
 
-  <!-- Structured Data (Local Business) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +36,7 @@
     "name": "Puffy Taco",
     "url": "https://puffytaco.vegas/",
     "image": "https://puffytaco.vegas/images/puffy-taco-logo.png",
-    "description": "Las Vegas-born puffy taco concept. Opening soon. Catering, pop-ups, and merch coming soon.",
+    "description": "Las Vegas-born puffy taco concept. Opening soon. Catering, pop-ups, merch, and drinks coming soon.",
     "servesCuisine": ["Mexican", "Tex-Mex"],
     "address": {
       "@type": "PostalAddress",
@@ -46,45 +44,33 @@
       "addressRegion": "NV",
       "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Las Vegas"
-    },
-    "sameAs": [
-      "https://instagram.com/YOURINSTAGRAM"
-    ]
+    "areaServed": { "@type": "City", "name": "Las Vegas" }
   }
   </script>
 </head>
-
 
 <body>
 
   <!-- HEADER / NAV -->
   <header class="site_header">
-   <a href="#home" class="brand">
-  <img 
-    src="images/puffy-taco-lettering.png" 
-    alt="Puffy Taco Las Vegas"
-    class="brand_logo"
-  >
-</a>
+    <a href="#home" class="brand">PUFFY TACO</a>
 
-    <nav class="site_nav">
+    <nav class="site_nav" aria-label="Primary">
       <a href="#about">ABOUT</a>
       <a href="#location">LOCATION</a>
       <a href="#menu">MENU</a>
       <a href="#catering">CATERING</a>
-	  <a href="#catering">MERCH</a>
+      <a href="#merch">MERCH</a>
       <a href="#contact">CONTACT</a>
     </nav>
   </header>
 
   <!-- HERO -->
-	<h1 class="sr_only">Puffy Taco | Las Vegas, NV</h1>
   <main id="home">
     <section class="hero">
-      <img src="images/puffy-taco-logo.png" class="hero_logo" alt="Puffy Taco Logo">
+      <h1 class="sr_only">Puffy Taco | Las Vegas, NV</h1>
+
+      <img src="images/puffy-taco-logo.png" class="hero_logo" alt="Puffy Taco logo">
       <p class="tagline">Excuse our dust. Good things are cooking. Opening soon.</p>
     </section>
 
@@ -96,11 +82,9 @@
         <p>
           Puffy Taco was born from long nights, loud kitchens, and a love for food that brings people together. What started as a simple idea grew from family recipes, shared tables, and learning flavor the hard way. Every tortilla, every fold, every bite reflects years of trial, tradition, and showing up hungry.
         </p>
-
         <p>
           Raised on street corners, backyard grills, and late-night cravings, Puffy Taco pulls from old-school comfort and bold city energy. It is food made with patience, cooked with intention, and served without shortcuts. The goal has always been simple: make something unforgettable and do it right.
         </p>
-
         <p>
           This is more than a menu. It is the story of building something from scratch, learning through failure, and earning every win along the way. Puffy Taco stands for hustle, heart, and flavor that hits hard and stays with you long after the last bite.
         </p>
@@ -116,42 +100,115 @@
       <p class="note">Las Vegas, NV — exact address coming soon</p>
     </section>
 
-    <!-- MENU -->
-    <section class="section" id="menu">
-      <h2>MENU</h2>
-      <p>
-        Menu coming soon. Expect bold flavors, crispy puffy shells, and zero shortcuts.
-      </p>
+    <!-- MENU (VIBED UP) -->
+    <section class="menu_section" id="menu">
+      <h2 class="menu_title">MENU</h2>
+      <p class="menu_subtitle">Opening soon. Prices + combos dropping next.</p>
+
+      <div class="menu_grid">
+
+        <div class="menu_card">
+          <h3 class="menu_heading">🌮 TACOS</h3>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Carne Asada</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Grilled steak, onion, cilantro, lime</small>
+          </div>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Al Pastor</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Marinated pork, pineapple, onion, cilantro</small>
+          </div>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Carnitas</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Slow-cooked pork, crispy finish, lime</small>
+          </div>
+
+          <div class="menu_note">Ask about salsa heat 🌶️</div>
+        </div>
+
+        <div class="menu_card">
+          <h3 class="menu_heading">🌽 SIDES</h3>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Elote</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Street corn, crema, cotija, chili</small>
+          </div>
+
+          <div class="menu_note">Add extra cotija + lime.</div>
+        </div>
+
+        <div class="menu_card">
+          <h3 class="menu_heading">🥤 DRINKS</h3>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Horchata</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Creamy cinnamon rice drink</small>
+          </div>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Jamaica</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Hibiscus iced tea</small>
+          </div>
+
+          <div class="menu_item">
+            <div class="menu_item_top">
+              <span class="menu_name">Agua Fresca</span>
+              <span class="menu_price">—</span>
+            </div>
+            <small class="menu_desc">Fresh fruit: Mango or Pineapple</small>
+          </div>
+
+          <div class="menu_note">Cold, fresh, built for Vegas heat.</div>
+        </div>
+
+      </div>
     </section>
 
     <!-- CATERING -->
     <section class="section" id="catering">
       <h2>CATERING</h2>
-      <p>
-        Available for events, pop-ups, productions, and private catering. Booking info coming soon.
-      </p>
+      <p>Available for events, pop-ups, productions, and private catering. Booking info coming soon.</p>
+    </section>
+
+    <!-- MERCH -->
+    <section class="section" id="merch">
+      <h2>MERCH</h2>
+      <p>Limited drops coming soon. Shirts, stickers, and heat for the streets.</p>
     </section>
 
     <!-- CONTACT -->
     <section class="section" id="contact">
       <h2>CONTACT</h2>
-      <p>
-        Updates dropping soon. Stay hungry.
-      </p>
-
+      <p>Updates dropping soon. Stay hungry.</p>
       <a href="#" class="button" onclick="return false;">SUBSCRIBE</a>
     </section>
   </main>
 
   <!-- FOOTER -->
-<footer class="footer">
-  <img src="images/LVRGK.png" class="footer_logo" alt="LVRGK Logo">
-  <div>© 2026 <strong>PuffyTaco.Vegas</strong></div>
-</footer>
-
+  <footer class="footer">
+    <img src="images/LVRGK.png" class="footer_logo" alt="LVRGK Logo">
+    <div>© 2026 <strong>PuffyTaco.Vegas</strong></div>
+  </footer>
 
 </body>
 </html>
-
-
-
