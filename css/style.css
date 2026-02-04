@@ -14,10 +14,16 @@ html, body {
    GLOBAL / BACKGROUND
 ========================= */
 body {
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #000 url("../images/bg-las-vegas.png") center / cover no-repeat;
+  background-color: #000;
+  background-image: url("../images/bg-las-vegas.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #ffffff;
 }
+
 
 /* =========================
    HEADER / NAV
