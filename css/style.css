@@ -112,10 +112,11 @@ body::before {
 /* Phone sizing */
 @media (max-width: 600px) {
   .brand_logo {
-    width: 300px;
+    width: 150px; /* HALF SIZE */
     max-width: 90%;
   }
 }
+
 
 /* Tiny phones */
 @media (max-width: 360px) {
