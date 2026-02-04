@@ -75,19 +75,6 @@ body::before {
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-.brand {
-  color: #ffffff;
-  text-decoration: none;
-
-  font-weight: 900;
-  font-size: 32px;
-  letter-spacing: 7px;
-
-  text-transform: uppercase;
-  line-height: 1;
-
-  text-shadow: 0 4px 14px rgba(0,0,0,0.6);
-}
 
 .site_nav a {
   color: rgba(255,255,255,0.9);
@@ -102,6 +89,41 @@ body::before {
   text-decoration: underline;
   color: #fff;
 }
+
+
+/* =========================
+   HEADER BRAND LOGO
+========================= */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Desktop scaling */
+.brand_logo {
+  width: clamp(260px, 30vw, 460px);
+  height: auto;
+  max-width: 100%;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
+}
+
+/* Phone sizing */
+@media (max-width: 600px) {
+  .brand_logo {
+    width: 300px;
+    max-width: 90%;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .brand_logo {
+    width: 260px;
+  }
+}
+
 
 /* =========================
    HERO
