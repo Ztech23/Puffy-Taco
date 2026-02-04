@@ -58,12 +58,19 @@ body::before {
 
 
 .brand {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 4px;
-  font-size: 16px;
+
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 6px;
+
+  text-transform: uppercase;
+  line-height: 1;
+
+  text-shadow: 0 4px 14px rgba(0,0,0,0.6);
 }
+
 
 .site_nav a {
   color: rgba(255,255,255,0.9);
