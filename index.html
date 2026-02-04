@@ -1,175 +1,98 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Puffy Taco</title>
 
-  <style type="text/css">
-    body {
-      margin: 0;
-      background-image: url("images/vegas-bg.jpeg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-      font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-      font-size: 24px;
-      color: black;
-    }
-
-    .secondary_header ul {
-      margin: 0 auto;
-      padding: 0 0 15px 0;
-      width: 100%;
-      text-align: center;
-    }
-
-    .secondary_header ul li {
-      display: inline-block;
-      list-style: none;
-      color: black;
-      font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-      letter-spacing: 1px;
-      margin: 0 1%;
-      cursor: pointer;
-      transition: all 0.3s linear;
-    }
-
-    .secondary_header ul li:hover {
-      color: #717070;
-    }
-
-    .social {
-      text-align: center;
-      margin: 0;
-      padding: 10px 0;
-      width: 100%;
-      background-color: rgba(65, 65, 65, 0.5);
-      clear: both;
-      overflow: auto;
-    }
-
-    .social_icon {
-      width: 25%;
-      display: inline-block;
-      text-align: center;
-      padding: 7px 0;
-      transition: all 0.3s linear;
-    }
-
-    .social_icon:hover {
-      opacity: 0.5;
-      cursor: pointer;
-    }
-
-    .footer {
-      background-color: rgba(113, 112, 112, 0.5);
-    }
-
-    .copyright {
-      text-align: center;
-      color: black;
-      font-weight: lighter;
-      letter-spacing: 2px;
-      padding: 25px 0 0 0;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .left_article, .right_article, .columns, .column_half.left_half, .column_half.right_half {
-        width: 100%;
-        float: none;
-      }
-
-      .secondary_header ul li {
-        display: block;
-        width: 100%;
-        margin: 10px 0;
-      }
-    }
-
-    /* Hero wrapper and logo styles */
-    .hero-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-    }
-
-    .hero-wrapper img.bg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-wrapper img.logo {
-      position: absolute;
-      top: 60%;
-      left: 80%;
-      transform: translate(-50%, -50%);
-      width: 28.75vw;
-      max-width: 489px;
-      min-width: 138px;
-      height: auto;
-    }
-
-    @media (max-width: 768px) {
-      .hero-wrapper img.logo {
-        top: 70%;
-        left: 50%;
-        width: 57.5vw;
-      }
-    }
-  </style>
+  <!-- CONNECT CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <!-- HERO SECTION -->
-  <div class="hero-wrapper">
-    <img src="images/las-vegas-bg.png" alt="Las Vegas" class="bg">
-    <img src="images/puffy-taco-logo.png" alt="Puffy Taco Logo" class="logo">
-  </div>
+  <!-- HEADER / NAV -->
+  <header class="site_header">
+    <a href="#home" class="brand">PUFFY TACO</a>
 
-  <!-- NAVIGATION -->
-  <nav class="secondary_header" id="menu">
-    <center>
-      <ul class="nav-menu">
-        <li>ABOUT</li>
-        <li>MENU</li>
-        <li>VIDEOS</li>
-        <li>CATERING</li>
-        <li>LOCATION</li>
-        <li>CONTACT</li>
-      </ul>
-    </center>
-  </nav>
+    <nav class="site_nav">
+      <a href="#about">ABOUT</a>
+      <a href="#location">LOCATION</a>
+      <a href="#menu">MENU</a>
+      <a href="#catering">CATERING</a>
+	  <a href="#catering">MERCH</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-  <!-- MAIN SECTION -->
-  <section>
-    <article class="left_article" align="center">
-      <h3>Pardon our dust.</h3>
-      <p>Good things are cooking. Opening soon.&nbsp;</p>
-    </article>
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <img src="images/puffy-taco-logo.png" class="hero_logo" alt="Puffy Taco Logo">
+      <p class="tagline">Excuse our dust. Good things are cooking. Opening soon.</p>
+    </section>
 
-    <div class="row">
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>ABOUT</h2>
+
       <div class="columns">
-        <h2>&nbsp;</h2>
-      </div>
-    </div>
-  </section>
+        <p>
+          Puffy Taco was born from long nights, loud kitchens, and a love for food that brings people together. What started as a simple idea grew from family recipes, shared tables, and learning flavor the hard way. Every tortilla, every fold, every bite reflects years of trial, tradition, and showing up hungry.
+        </p>
 
-  <!-- SOCIAL -->
-  <div class="social"></div>
+        <p>
+          Raised on street corners, backyard grills, and late-night cravings, Puffy Taco pulls from old-school comfort and bold city energy. It is food made with patience, cooked with intention, and served without shortcuts. The goal has always been simple: make something unforgettable and do it right.
+        </p>
+
+        <p>
+          This is more than a menu. It is the story of building something from scratch, learning through failure, and earning every win along the way. Puffy Taco stands for hustle, heart, and flavor that hits hard and stays with you long after the last bite.
+        </p>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section" id="location">
+      <h2>LOCATION</h2>
+      <p>
+        Born in Las Vegas, Puffy Taco is shaped by the energy, grit, and nonstop rhythm of the city itself. Raised among long nights, bright lights, and hard-earned lessons, the brand reflects a hometown mindset built on resilience and pride.
+      </p>
+      <p class="note">Las Vegas, NV — exact address coming soon</p>
+    </section>
+
+    <!-- MENU -->
+    <section class="section" id="menu">
+      <h2>MENU</h2>
+      <p>
+        Menu coming soon. Expect bold flavors, crispy puffy shells, and zero shortcuts.
+      </p>
+    </section>
+
+    <!-- CATERING -->
+    <section class="section" id="catering">
+      <h2>CATERING</h2>
+      <p>
+        Available for events, pop-ups, productions, and private catering. Booking info coming soon.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>CONTACT</h2>
+      <p>
+        Updates dropping soon. Stay hungry.
+      </p>
+
+      <a href="#" class="button" onclick="return false;">SUBSCRIBE</a>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="secondary_header footer">
-    <div class="copyright">
-      2026 - <strong>Puffy Taco - Las Vegas, NV</strong>
-    </div>
-  </footer>
+<footer class="footer">
+  <img src="images/LVRGK.png" class="footer_logo" alt="LVRGK Logo">
+  <div>© 2026 <strong>PuffyTaco.Vegas</strong></div>
+</footer>
+
 
 </body>
 </html>
