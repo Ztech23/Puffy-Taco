@@ -121,9 +121,10 @@ body::before {
 /* Tiny phones */
 @media (max-width: 360px) {
   .brand_logo {
-    width: 260px;
+    width: 130px; /* HALF SIZE */
   }
 }
+
 
 
 /* =========================
