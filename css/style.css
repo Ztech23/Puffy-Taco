@@ -394,12 +394,13 @@ body::before {
 }
 
 .footer_logo {
-  width: 140px;
-  max-width: 70%;
+  width: 280px;      /* was 140px → now 2x */
+  max-width: 90%;
   height: auto;
   margin-bottom: 12px;
   opacity: 0.9;
 }
+
 
 /* =========================
    RESPONSIVE (<=900px)
