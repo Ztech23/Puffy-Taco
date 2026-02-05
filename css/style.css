@@ -498,36 +498,7 @@ body::before {
     max-width: 85%;
   }
 }
-/* =========================
-   ABOUT IMAGE SECTION
-========================= */
-.section_image_only {
-  background: transparent;
-  border-top: none;
-  padding: 40px 20px;
-}
 
-.section_full_image {
-  width: 100%;
-  max-width: 1050px;   /* matches site content width */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-
-  border-radius: 16px;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.4);
-}
-
-
-@media (max-width: 600px) {
-  .section_image_only {
-    padding: 24px 12px;
-  }
-
-  .section_full_image {
-    border-radius: 14px;
-  }
-}
 /* =========================
    IMAGE-ONLY SECTIONS: OVERRIDE .section (FINAL FIX)
    Paste at VERY BOTTOM
@@ -554,6 +525,43 @@ body::before {
 @media (max-width: 600px) {
   .section.section_image_only {
     padding: 18px 12px;
+  }
+
+  .section.section_image_only .section_full_image {
+    border-radius: 10px;
+  }
+}
+/* =========================
+   IMAGE SECTIONS (ABOUT / LOCATION) - FINAL
+   Makes them match the rest of the site panels
+========================= */
+
+/* This targets sections that have BOTH classes: section + section_image_only */
+.section.section_image_only {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 22px 20px;
+
+  background: rgba(0,0,0,0.68);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+}
+
+/* The image should fill the panel nicely */
+.section.section_image_only .section_full_image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .section.section_image_only {
+    padding: 14px 12px;
   }
 
   .section.section_image_only .section_full_image {
