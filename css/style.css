@@ -1,30 +1,20 @@
 /* =========================
    RESET
 ========================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow-x: hidden; }
 
 /* =========================
    GLOBAL / BACKGROUND
 ========================= */
 :root {
-  --red: #c62828;
-  --yellow: #f4c430;
-  --green: #3fa34d;
-  --smoke: #f5f5f5;
+  --panel: rgba(0,0,0,0.68);
+  --border: rgba(255,255,255,0.10);
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  color: rgba(255,255,255,0.92);
 
   background-color: #000;
   background-image: url("/images/bg-las-vegas.png");
@@ -33,30 +23,13 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Soft fade overlay for readability */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(
-    rgba(15, 15, 15, 0.55),
-    rgba(15, 15, 15, 0.65)
-  );
+  background: linear-gradient(rgba(15,15,15,0.55), rgba(15,15,15,0.65));
   pointer-events: none;
   z-index: -1;
-}
-
-/* Accessible hidden text */
-.sr_only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
 }
 
 /* =========================
@@ -75,6 +48,20 @@ body::before {
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand_logo {
+  width: clamp(180px, 18vw, 300px);
+  height: auto;
+  display: block;
+  max-width: 100%;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
+}
+
 .site_nav a {
   color: rgba(255,255,255,0.9);
   text-decoration: none;
@@ -85,38 +72,8 @@ body::before {
 }
 
 .site_nav a:hover {
-  text-decoration: underline;
   color: #fff;
-}
-
-/* =========================
-   HEADER BRAND LOGO
-========================= */
-.brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.brand_logo {
-  width: clamp(130px, 15vw, 230px);
-  height: auto;
-  max-width: 100%;
-  display: block;
-  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
-}
-
-@media (max-width: 600px) {
-  .brand_logo {
-    width: 150px;
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 360px) {
-  .brand_logo {
-    width: 130px;
-  }
+  text-decoration: underline;
 }
 
 /* =========================
@@ -133,253 +90,90 @@ body::before {
 }
 
 .hero_logo {
-  width: clamp(380px, 38vw, 640px);
-  max-width: 94%;
+  width: clamp(320px, 34vw, 600px);
+  max-width: 92%;
   height: auto;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.65));
 }
 
 .tagline {
-  margin-top: 28px;
+  margin-top: 22px;
   max-width: 980px;
-  text-align: center;
+  padding: 0 10px;
 
-  font-size: 44px;
+  font-size: clamp(22px, 3.2vw, 44px);
   font-weight: 900;
   letter-spacing: 3px;
   line-height: 1.15;
-
   text-transform: uppercase;
-  color: #ffffff;
+
+  color: #fff;
   text-shadow: 0 6px 20px rgba(0,0,0,0.75);
 }
 
 /* =========================
-   SECTIONS (BASE PANEL)
+   SECTIONS (PANEL)
 ========================= */
 .section {
   max-width: 1100px;
   margin: 18px auto;
-  padding: 55px 20px;
+  padding: 44px 20px;
 
-  background: rgba(0,0,0,0.68);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: 14px;
 }
 
-.section h2 {
-  font-size: 22px;
-  letter-spacing: 3px;
-  margin-bottom: 18px;
+/* Word-logo sections (About/Location/Catering/Merch/Contact/Menu title images) */
+.section.image_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 }
 
-/* Legacy text columns (safe to keep even if unused) */
+.section_word_image {
+  width: clamp(150px, 16vw, 240px); /* matches your menu heading scale */
+  height: auto;
+  max-width: 90%;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.65));
+}
+
+/* About columns */
 .columns {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  margin-top: 12px;
+  text-align: left;
 }
 
-.columns p {
+.columns p, .section p {
   line-height: 1.6;
   font-size: 15px;
   color: rgba(255,255,255,0.92);
 }
 
 .note {
-  margin-top: 10px;
   font-size: 13px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
+/* Buttons */
 .button {
   display: inline-block;
-  margin-top: 14px;
+  margin-top: 8px;
   padding: 12px 22px;
-
   border: 2px solid #fff;
   color: #fff;
   text-decoration: none;
   font-weight: 800;
   letter-spacing: 2px;
 }
-
-.button:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* =========================
-   MENU – PUFFY TACO STYLE
-========================= */
-.menu_section {
-  max-width: 1100px;
-  margin: 18px auto;
-  padding: 70px 20px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.72), rgba(15,15,15,0.82));
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 18px 60px rgba(0,0,0,0.45);
-}
-
-.menu_title {
-  text-align: center;
-  font-size: 40px;
-  letter-spacing: 8px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.7);
-}
-
-.menu_subtitle {
-  text-align: center;
-  opacity: 0.85;
-  margin-bottom: 40px;
-}
-
-.menu_grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.menu_card {
-  position: relative;
-  padding: 22px 18px;
-  border-radius: 16px;
-  background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.10);
-  backdrop-filter: blur(6px);
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.menu_card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(244,196,48,0.35);
-}
-
-.menu_heading {
-  font-size: 18px;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-  color: var(--yellow);
-  border-bottom: 2px solid rgba(244,196,48,0.35);
-  padding-bottom: 10px;
-}
-
-.menu_item {
-  padding: 12px 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.16);
-  transition: transform 0.25s ease;
-}
-
-.menu_item:last-of-type {
-  border-bottom: none;
-}
-
-.menu_item:hover {
-  transform: translateX(6px);
-}
-
-.menu_item_top {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.menu_name {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--smoke);
-}
-
-.menu_name::before {
-  content: "• ";
-  color: var(--red);
-  font-weight: 900;
-}
-
-.menu_price {
-  font-size: 14px;
-  letter-spacing: 2px;
-  opacity: 0.85;
-  color: rgba(255,255,255,0.85);
-}
-
-.menu_desc {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  opacity: 0.82;
-  line-height: 1.35;
-}
-
-.menu_note {
-  margin-top: 14px;
-  font-size: 12px;
-  letter-spacing: 1px;
-  opacity: 0.85;
-  color: rgba(255,255,255,0.85);
-}
-
-.menu_note::before {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(63,163,77,0.9);
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-/* =========================
-   MENU IMAGE HEADERS (size reference)
-========================= */
-.menu_title_img,
-.menu_heading_img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu_title_logo {
-  width: clamp(220px, 28vw, 420px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.7));
-  margin-bottom: 10px;
-}
-
-.menu_heading_logo {
-  width: clamp(140px, 16vw, 240px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.7));
-  margin-bottom: 10px;
-}
-
-/* =========================
-   WORD-IMAGE SECTIONS (ABOUT/LOCATION/CATERING/MERCH/CONTACT)
-   Make them match menu header size + 80% downscale
-========================= */
-.image_section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section_word_image {
-  height: auto;
-  display: block;
-
-  /* Match "menu_heading_logo" sizing, then shrink ~80% */
-  width: clamp(112px, 12.8vw, 192px);
-  max-width: 90%;
-
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.65));
-}
+.button:hover { background: #fff; color: #000; }
 
 /* =========================
    FOOTER
@@ -393,26 +187,20 @@ body::before {
   margin-top: 18px;
 }
 
+/* 2x size, but safe on mobile */
 .footer_logo {
-  width: 280px;      /* was 140px → now 2x */
+  width: 280px;
   max-width: 90%;
   height: auto;
   margin-bottom: 12px;
   opacity: 0.9;
 }
 
-
 /* =========================
-   RESPONSIVE (<=900px)
+   RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-  .columns {
-    grid-template-columns: 1fr;
-  }
-
-  .menu_grid {
-    grid-template-columns: 1fr;
-  }
+  .columns { grid-template-columns: 1fr; }
 
   .site_header {
     flex-direction: column;
@@ -422,20 +210,11 @@ body::before {
   .site_nav a {
     margin: 0 10px;
   }
-
-  .tagline {
-    font-size: 30px;
-    letter-spacing: 2px;
-    padding: 0 12px;
-  }
 }
 
-/* =========================
-   MOBILE (<=600px)
-========================= */
 @media (max-width: 600px) {
   body {
-    background-size: 110%;
+    background-size: cover;          /* fill screen, no big black gaps */
     background-position: center top;
   }
 
@@ -456,62 +235,19 @@ body::before {
     border-radius: 10px;
   }
 
-  .hero {
-    min-height: 70vh;
-    padding: 50px 16px;
-  }
+  .hero { min-height: 70vh; padding: 50px 16px; }
 
-  .hero_logo {
-    width: min(520px, 92vw);
-  }
+  .section { padding: 28px 14px; }
 
-  .tagline {
-    font-size: 26px;
-    letter-spacing: 2px;
-    line-height: 1.2;
-  }
-
-  .button {
-    width: 100%;
-    max-width: 320px;
-    text-align: center;
-  }
-
-  .footer {
-    font-size: 12px;
-  }
-
-  /* Menu images on mobile */
-  .menu_title_logo {
-    width: 260px;
-    max-width: 90%;
-  }
-
-  .menu_heading_logo {
-    width: 170px;
-    max-width: 85%;
-  }
-
-  /* Word images on mobile */
   .section_word_image {
-    width: 170px; /* matches menu heading scale on phone */
+    width: 170px; /* matches menu heading on phone */
     max-width: 88%;
   }
+
+  .footer { font-size: 12px; }
 }
 
-/* =========================
-   TINY PHONES (<=360px)
-========================= */
 @media (max-width: 360px) {
-  .site_nav {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero_logo {
-    width: min(440px, 92vw);
-  }
-
-  .section_word_image {
-    width: 150px;
-  }
+  .site_nav { grid-template-columns: repeat(2, 1fr); }
+  .section_word_image { width: 150px; }
 }
