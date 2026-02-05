@@ -509,14 +509,15 @@ body::before {
 
 .section_full_image {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1050px;   /* matches site content width */
   height: auto;
   display: block;
   margin: 0 auto;
 
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.4);
 }
+
 
 @media (max-width: 600px) {
   .section_image_only {
