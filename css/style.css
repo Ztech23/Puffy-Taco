@@ -515,3 +515,17 @@ body::before {
     width: 150px;
   }
 }
+/* =========================
+   IMAGE SECTIONS: LOGO ABOVE TEXT (FINAL)
+========================= */
+.section.image_section {
+  display: flex;
+  flex-direction: column;   /* STACK vertically */
+  align-items: center;      /* center logo */
+  text-align: center;
+}
+
+/* Space between logo and text */
+.section.image_section > img {
+  margin-bottom: 22px;
+}
