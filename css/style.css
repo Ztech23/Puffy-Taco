@@ -75,7 +75,6 @@ body::before {
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-
 .site_nav a {
   color: rgba(255,255,255,0.9);
   text-decoration: none;
@@ -90,7 +89,6 @@ body::before {
   color: #fff;
 }
 
-
 /* =========================
    HEADER BRAND LOGO
 ========================= */
@@ -101,31 +99,25 @@ body::before {
 }
 
 .brand_logo {
-  width: clamp(130px, 15vw, 230px); /* HALF SIZE */
+  width: clamp(130px, 15vw, 230px);
   height: auto;
   max-width: 100%;
   display: block;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
 }
 
-
-/* Phone sizing */
 @media (max-width: 600px) {
   .brand_logo {
-    width: 150px; /* HALF SIZE */
+    width: 150px;
     max-width: 90%;
   }
 }
 
-
-/* Tiny phones */
 @media (max-width: 360px) {
   .brand_logo {
-    width: 130px; /* HALF SIZE */
+    width: 130px;
   }
 }
-
-
 
 /* =========================
    HERO
@@ -159,12 +151,11 @@ body::before {
 
   text-transform: uppercase;
   color: #ffffff;
-
   text-shadow: 0 6px 20px rgba(0,0,0,0.75);
 }
 
 /* =========================
-   SECTIONS
+   SECTIONS (BASE PANEL)
 ========================= */
 .section {
   max-width: 1100px;
@@ -182,7 +173,7 @@ body::before {
   margin-bottom: 18px;
 }
 
-/* About columns */
+/* Legacy text columns (safe to keep even if unused) */
 .columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -195,14 +186,12 @@ body::before {
   color: rgba(255,255,255,0.92);
 }
 
-/* Notes */
 .note {
   margin-top: 10px;
   font-size: 13px;
   opacity: 0.8;
 }
 
-/* Button */
 .button {
   display: inline-block;
   margin-top: 14px;
@@ -346,6 +335,53 @@ body::before {
 }
 
 /* =========================
+   MENU IMAGE HEADERS (size reference)
+========================= */
+.menu_title_img,
+.menu_heading_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_title_logo {
+  width: clamp(220px, 28vw, 420px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.7));
+  margin-bottom: 10px;
+}
+
+.menu_heading_logo {
+  width: clamp(140px, 16vw, 240px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.7));
+  margin-bottom: 10px;
+}
+
+/* =========================
+   WORD-IMAGE SECTIONS (ABOUT/LOCATION/CATERING/MERCH/CONTACT)
+   Make them match menu header size + 80% downscale
+========================= */
+.image_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_word_image {
+  height: auto;
+  display: block;
+
+  /* Match "menu_heading_logo" sizing, then shrink ~80% */
+  width: clamp(112px, 12.8vw, 192px);
+  max-width: 90%;
+
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.65));
+}
+
+/* =========================
    FOOTER
 ========================= */
 .footer {
@@ -397,13 +433,11 @@ body::before {
    MOBILE (<=600px)
 ========================= */
 @media (max-width: 600px) {
-  /* Background tuned for phones */
   body {
     background-size: 110%;
     background-position: center top;
   }
 
-  /* Nav becomes grid buttons */
   .site_nav {
     width: 100%;
     display: grid;
@@ -421,7 +455,6 @@ body::before {
     border-radius: 10px;
   }
 
-  /* Hero adjustments */
   .hero {
     min-height: 70vh;
     padding: 50px 16px;
@@ -446,6 +479,23 @@ body::before {
   .footer {
     font-size: 12px;
   }
+
+  /* Menu images on mobile */
+  .menu_title_logo {
+    width: 260px;
+    max-width: 90%;
+  }
+
+  .menu_heading_logo {
+    width: 170px;
+    max-width: 85%;
+  }
+
+  /* Word images on mobile */
+  .section_word_image {
+    width: 170px; /* matches menu heading scale on phone */
+    max-width: 88%;
+  }
 }
 
 /* =========================
@@ -459,112 +509,8 @@ body::before {
   .hero_logo {
     width: min(440px, 92vw);
   }
-}
-/* =========================
-   MENU IMAGE HEADERS
-========================= */
-.menu_title_img,
-.menu_heading_img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.menu_title_logo {
-  width: clamp(220px, 28vw, 420px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.7));
-  margin-bottom: 10px;
-}
-
-.menu_heading_logo {
-  width: clamp(140px, 16vw, 240px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.7));
-  margin-bottom: 10px;
-}
-
-/* Mobile sizing */
-@media (max-width: 600px) {
-  .menu_title_logo {
-    width: 260px;
-    max-width: 90%;
-  }
-
-  .menu_heading_logo {
-    width: 170px;
-    max-width: 85%;
-  }
-}
-
-/* =========================
-   IMAGE-ONLY SECTIONS: OVERRIDE .section (FINAL FIX)
-   Paste at VERY BOTTOM
-========================= */
-.section.section_image_only {
-  max-width: 1100px;                 /* match the rest of the site */
-  margin: 18px auto;                 /* same spacing as .section */
-  padding: 28px 20px;                /* tighter than regular section */
-  background: rgba(0,0,0,0.68);      /* same panel look as other sections */
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 14px;
-}
-
-.section.section_image_only .section_full_image {
-  width: 100%;
-  max-width: 100%;                   /* fill the panel, no oversized poster */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
-}
-
-@media (max-width: 600px) {
-  .section.section_image_only {
-    padding: 18px 12px;
-  }
-
-  .section.section_image_only .section_full_image {
-    border-radius: 10px;
-  }
-}
-/* =========================
-   IMAGE SECTIONS (ABOUT / LOCATION) - FINAL
-   Makes them match the rest of the site panels
-========================= */
-
-/* This targets sections that have BOTH classes: section + section_image_only */
-.section.section_image_only {
-  max-width: 1100px;
-  margin: 18px auto;
-  padding: 22px 20px;
-
-  background: rgba(0,0,0,0.68);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 14px;
-}
-
-/* The image should fill the panel nicely */
-.section.section_image_only .section_full_image {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-
-  border-radius: 12px;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
-}
-
-/* Mobile spacing */
-@media (max-width: 600px) {
-  .section.section_image_only {
-    padding: 14px 12px;
-  }
-
-  .section.section_image_only .section_full_image {
-    border-radius: 10px;
+  .section_word_image {
+    width: 150px;
   }
 }
