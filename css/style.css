@@ -1,253 +1,236 @@
-/* =========================
-   RESET
-========================= */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; overflow-x: hidden; }
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Puffy Taco | Las Vegas, NV | Puffy Tacos, Catering & Pop-Ups</title>
 
-/* =========================
-   GLOBAL / BACKGROUND
-========================= */
-:root {
-  --panel: rgba(0,0,0,0.68);
-  --border: rgba(255,255,255,0.10);
-}
+  <!-- Primary SEO -->
+  <meta name="description" content="Puffy Taco is a Las Vegas-born puffy taco concept serving bold flavors with no shortcuts. Opening soon in Las Vegas, NV. Catering, pop-ups, merch, and drinks coming soon.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://puffytaco.vegas/">
+  <meta name="theme-color" content="#000000">
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgba(255,255,255,0.92);
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Puffy Taco">
+  <meta property="og:title" content="Puffy Taco | Las Vegas, NV">
+  <meta property="og:description" content="Las Vegas-born puffy tacos. Opening soon. Catering, pop-ups, and merch coming soon.">
+  <meta property="og:url" content="https://puffytaco.vegas/">
+  <meta property="og:image" content="https://puffytaco.vegas/images/puffy-taco-logo.png">
 
-  background-color: #000;
-  background-image: url("/images/bg-las-vegas.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Puffy Taco | Las Vegas, NV">
+  <meta name="twitter:description" content="Las Vegas-born puffy tacos. Opening soon. Catering, pop-ups, and merch coming soon.">
+  <meta name="twitter:image" content="https://puffytaco.vegas/images/puffy-taco-logo.png">
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(rgba(15,15,15,0.55), rgba(15,15,15,0.65));
-  pointer-events: none;
-  z-index: -1;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css?v=12">
 
-/* =========================
-   HEADER / NAV
-========================= */
-.site_header {
-  position: relative;
-  z-index: 10;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 18px 22px;
-  background: rgba(0,0,0,0.7);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.brand_logo {
-  width: clamp(180px, 18vw, 300px);
-  height: auto;
-  display: block;
-  max-width: 100%;
-  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
-}
-
-.site_nav a {
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  margin-left: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 13px;
-}
-
-.site_nav a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 70px 20px;
-}
-
-.hero_logo {
-  width: clamp(320px, 34vw, 600px);
-  max-width: 92%;
-  height: auto;
-  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.65));
-}
-
-.tagline {
-  margin-top: 22px;
-  max-width: 980px;
-  padding: 0 10px;
-
-  font-size: clamp(22px, 3.2vw, 44px);
-  font-weight: 900;
-  letter-spacing: 3px;
-  line-height: 1.15;
-  text-transform: uppercase;
-
-  color: #fff;
-  text-shadow: 0 6px 20px rgba(0,0,0,0.75);
-}
-
-/* =========================
-   SECTIONS (PANEL)
-========================= */
-.section {
-  max-width: 1100px;
-  margin: 18px auto;
-  padding: 44px 20px;
-
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-}
-
-/* Word-logo sections (About/Location/Catering/Merch/Contact/Menu title images) */
-.section.image_section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
-
-.section_word_image {
-  width: clamp(150px, 16vw, 240px); /* matches your menu heading scale */
-  height: auto;
-  max-width: 90%;
-  display: block;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.65));
-}
-
-/* About columns */
-.columns {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 12px;
-  text-align: left;
-}
-
-.columns p, .section p {
-  line-height: 1.6;
-  font-size: 15px;
-  color: rgba(255,255,255,0.92);
-}
-
-.note {
-  font-size: 13px;
-  opacity: 0.85;
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 12px 22px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-.button:hover { background: #fff; color: #000; }
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-  text-align: center;
-  padding: 22px 12px;
-  background: rgba(0,0,0,0.8);
-  letter-spacing: 2px;
-  font-size: 13px;
-  margin-top: 18px;
-}
-
-/* 2x size, but safe on mobile */
-.footer_logo {
-  width: 280px;
-  max-width: 90%;
-  height: auto;
-  margin-bottom: 12px;
-  opacity: 0.9;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .columns { grid-template-columns: 1fr; }
-
-  .site_header {
-    flex-direction: column;
-    gap: 12px;
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Puffy Taco",
+    "url": "https://puffytaco.vegas/",
+    "image": "https://puffytaco.vegas/images/puffy-taco-logo.png",
+    "description": "Las Vegas-born puffy taco concept. Opening soon. Catering, pop-ups, merch, and drinks coming soon.",
+    "servesCuisine": ["Mexican", "Tex-Mex"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Las Vegas",
+      "addressRegion": "NV",
+      "addressCountry": "US"
+    },
+    "areaServed": { "@type": "City", "name": "Las Vegas" }
   }
+  </script>
+</head>
 
-  .site_nav a {
-    margin: 0 10px;
-  }
-}
+<body>
 
-@media (max-width: 600px) {
-  body {
-    background-size: cover;          /* fill screen, no big black gaps */
-    background-position: center top;
-  }
+  <!-- HEADER / NAV -->
+  <header class="site_header">
+  <a href="#home" class="brand">
+  <img src="images/Puffy Tacov2.png" alt="Puffy Taco" class="brand_logo">
+</a>
 
-  .site_nav {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    text-align: center;
-  }
+    <nav class="site_nav" aria-label="Primary">
+      <a href="#about">ABOUT</a>
+      <a href="#location">LOCATION</a>
+      <a href="#menu">MENU</a>
+      <a href="#catering">CATERING</a>
+      <a href="#merch">MERCH</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-  .site_nav a {
-    margin: 0;
-    padding: 10px 8px;
-    font-size: 12px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 10px;
-  }
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <h1 class="sr_only">Puffy Taco | Las Vegas, NV</h1>
 
-  .hero { min-height: 70vh; padding: 50px 16px; }
+      <img src="images/excuse our dust.png" class="hero_logo" alt="Puffy Taco logo">
+     
+    </section>
 
-  .section { padding: 28px 14px; }
+<!-- ABOUT -->
+<section class="section section_image_only" id="about">
+  <img
+    src="images/about big.png"
+    alt="About Puffy Taco"
+    class="section_full_image"
+  >
+</section>
 
-  .section_word_image {
-    width: 170px; /* matches menu heading on phone */
-    max-width: 88%;
-  }
 
-  .footer { font-size: 12px; }
-}
+    <!-- LOCATION -->
+<section class="section image_section" id="location">
+  <img
+    src="images/location big.png"
+    alt="Puffy Taco Location"
+    class="section_word_image"
+  >
+</section>
 
-@media (max-width: 360px) {
-  .site_nav { grid-template-columns: repeat(2, 1fr); }
-  .section_word_image { width: 150px; }
-}
+
+    <!-- MENU (VIBED UP) -->
+    <!-- MENU (IMAGE HEADERS) -->
+<section class="menu_section" id="menu">
+
+  <!-- MENU title image (keep hidden text for SEO) -->
+  <h2 class="menu_title_img">
+    <span class="sr_only">Menu</span>
+    <img src="images/Menu.png" alt="Menu" class="menu_title_logo">
+  </h2>
+
+  <p class="menu_subtitle">Opening soon. Prices + combos dropping next.</p>
+
+  <div class="menu_grid">
+
+    <div class="menu_card">
+      <h3 class="menu_heading_img">
+        <span class="sr_only">Tacos</span>
+        <img src="images/Taco's.png" alt="Tacos" class="menu_heading_logo">
+      </h3>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Carne Asada</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Grilled steak, onion, cilantro, lime</small>
+      </div>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Al Pastor</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Marinated pork, pineapple, onion, cilantro</small>
+      </div>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Carnitas</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Slow-cooked pork, crispy finish, lime</small>
+      </div>
+
+      <div class="menu_note">Ask about salsa heat 🌶️</div>
+    </div>
+
+    <div class="menu_card">
+      <h3 class="menu_heading_img">
+        <span class="sr_only">Sides</span>
+        <img src="images/Side's.png" alt="Sides" class="menu_heading_logo">
+      </h3>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Elote</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Street corn, crema, cotija, chili</small>
+      </div>
+
+      <div class="menu_note">Add extra cotija + lime.</div>
+    </div>
+
+    <div class="menu_card">
+      <h3 class="menu_heading_img">
+        <span class="sr_only">Drinks</span>
+        <img src="images/Drink's.png" alt="Drinks" class="menu_heading_logo">
+      </h3>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Horchata</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Creamy cinnamon rice drink</small>
+      </div>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Jamaica</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Hibiscus iced tea</small>
+      </div>
+
+      <div class="menu_item">
+        <div class="menu_item_top">
+          <span class="menu_name">Agua Fresca</span>
+          <span class="menu_price">—</span>
+        </div>
+        <small class="menu_desc">Fresh fruit: Mango or Pineapple</small>
+      </div>
+
+      <div class="menu_note">Cold, fresh, built for Vegas heat.</div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- CATERING -->
+<section class="section image_section" id="catering">
+  <img
+    src="images/catering big.png"
+    alt="Puffy Taco Catering"
+    class="section_word_image"
+  >
+</section>
+
+<!-- MERCH -->
+<section class="section image_section" id="merch">
+  <img
+    src="images/merch big.png"
+    alt="Puffy Taco Merch"
+    class="section_word_image"
+  >
+</section>
+
+
+<!-- CONTACT -->
+<section class="section image_section" id="contact">
+  <img
+    src="images/logo mixture.png"
+    alt="Puffy Taco Contact"
+    class="section_word_image"
+  >
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="images/LVGRK2.png" class="footer_logo" alt="LVRGK Logo">
+    <div>© 2026 <strong>PuffyTaco.Vegas</strong></div>
+  </footer>
+
+</body>
+</html>
