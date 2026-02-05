@@ -529,3 +529,64 @@ body::before {
 .section.image_section > img {
   margin-bottom: 22px;
 }
+/* =========================
+   MOBILE + LOGO SIZE + BACKGROUND FIX (FINAL PATCH)
+   Paste at VERY BOTTOM so it overrides everything
+========================= */
+
+/* 1) FORCE logo ABOVE text on ALL screens */
+.section.image_section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 18px;
+}
+
+.section.image_section .section_word_image {
+  margin: 0 auto 12px;
+  display: block;
+}
+
+/* 2) MAKE section logos match menu size, then ~2.3x bigger */
+.section_word_image {
+  width: clamp(322px, 36.8vw, 552px) !important; /* 2.3x of menu heading size */
+  max-width: 92% !important;
+  height: auto !important;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.7));
+}
+
+/* 3) iPhone/Mobile: background must fill screen (no black gap) */
+@media (max-width: 600px) {
+  html, body {
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-color: #000 !important;
+  }
+
+  /* Force stack on mobile too (wins any older mobile flex rules) */
+  .section.image_section {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Mobile logo size: 2.3x of your menu heading mobile (170px * 2.3 ≈ 391px) */
+  .section_word_image {
+    width: min(390px, 92vw) !important;
+    max-width: 92vw !important;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .section_word_image {
+    width: min(340px, 92vw) !important;
+  }
+}
