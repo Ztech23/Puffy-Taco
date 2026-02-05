@@ -528,3 +528,35 @@ body::before {
     border-radius: 14px;
   }
 }
+/* =========================
+   IMAGE-ONLY SECTIONS: OVERRIDE .section (FINAL FIX)
+   Paste at VERY BOTTOM
+========================= */
+.section.section_image_only {
+  max-width: 1100px;                 /* match the rest of the site */
+  margin: 18px auto;                 /* same spacing as .section */
+  padding: 28px 20px;                /* tighter than regular section */
+  background: rgba(0,0,0,0.68);      /* same panel look as other sections */
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+}
+
+.section.section_image_only .section_full_image {
+  width: 100%;
+  max-width: 100%;                   /* fill the panel, no oversized poster */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 600px) {
+  .section.section_image_only {
+    padding: 18px 12px;
+  }
+
+  .section.section_image_only .section_full_image {
+    border-radius: 10px;
+  }
+}
