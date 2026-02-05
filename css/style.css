@@ -616,3 +616,25 @@ body::before {
     background-size: 140% !important;   /* prevent edge clipping */
   }
 }
+/* =========================
+   NAV BAR LOGO — 2x SIZE (FINAL)
+========================= */
+.brand_logo {
+  width: clamp(360px, 36vw, 600px) !important; /* ~2x bigger */
+  height: auto !important;
+  max-width: 95% !important;
+}
+
+/* Mobile (keep it bold but not broken) */
+@media (max-width: 600px) {
+  .brand_logo {
+    width: min(320px, 88vw) !important;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .brand_logo {
+    width: min(280px, 90vw) !important;
+  }
+}
