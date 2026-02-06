@@ -848,7 +848,7 @@ body::before {
    CONTACT AVATAR
 ========================= */
 .contact_avatar {
-  width: min(420px, 90vw);
+  width: min(840px, 90vw); /* DOUBLED */
   height: auto;
   margin: 22px auto;
   display: block;
@@ -858,6 +858,6 @@ body::before {
 /* Mobile tweak */
 @media (max-width: 600px) {
   .contact_avatar {
-    width: min(340px, 92vw);
+    width: min(680px, 92vw); /* DOUBLED */
   }
 }
