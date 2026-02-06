@@ -773,3 +773,74 @@ body::before {
     width: 90px;
   }
 }
+/* =========================
+   PRINT MENU – KEEP VEGAS BACKGROUND
+========================= */
+@media print {
+  html, body {
+    height: auto;
+  }
+
+  body {
+    background-image: url("/images/bg-las-vegas.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Remove non-menu UI */
+  header,
+  nav,
+  footer,
+  .button {
+    display: none !important;
+  }
+
+  /* Kill overlay darkness just enough for print */
+  body::before {
+    background: linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.45)
+    ) !important;
+  }
+
+  /* Menu container becomes poster */
+  .menu_section {
+    background: rgba(0,0,0,0.55) !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 40px !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+  }
+
+  .menu_card {
+    background: rgba(0,0,0,0.45) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  /* Typography tuned for print distance */
+  .menu_name {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+  }
+
+  .menu_desc {
+    font-size: 15px !important;
+    opacity: 0.95 !important;
+  }
+
+  .menu_note {
+    font-size: 13px !important;
+  }
+
+  /* Images stay crisp */
+  img {
+    max-width: 100% !important;
+  }
+}
