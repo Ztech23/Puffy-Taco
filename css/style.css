@@ -844,3 +844,20 @@ body::before {
     max-width: 100% !important;
   }
 }
+/* =========================
+   CONTACT AVATAR
+========================= */
+.contact_avatar {
+  width: min(420px, 90vw);
+  height: auto;
+  margin: 22px auto;
+  display: block;
+  filter: drop-shadow(0 16px 40px rgba(0,0,0,0.6));
+}
+
+/* Mobile tweak */
+@media (max-width: 600px) {
+  .contact_avatar {
+    width: min(340px, 92vw);
+  }
+}
